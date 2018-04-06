@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Retrofit retro =new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create(new Gson())).build();
         service serv = retro.create(service.class);
-        serv.getUser("dodo").enqueue(new Callback<Example>() {
+        serv.getUser("hoda").enqueue(new Callback<Example>() {
             @Override
             public void onResponse(Call<Example> call, Response<Example> response) {
                 Toast.makeText(MainActivity.this,"onsuccress"+ response.body().getLogin(),Toast.LENGTH_SHORT).show();
